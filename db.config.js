@@ -27,6 +27,7 @@ db.Note = require('./models/m_note')(sequelize);
 db.Formation.hasMany(db.Eleve, { foreignKey: 'id_formation' });
 db.Eleve.belongsTo(db.Formation, { foreignKey: 'id_formation' });
 
+
 //Relation Formation - Module
 db.Formation.hasMany(db.Module, { foreignKey: 'id_formation' });
 db.Module.belongsTo(db.Formation, { foreignKey: 'id_formation' });
@@ -49,4 +50,4 @@ db.Eleve.belongsTo(db.Note, { foreignKey: 'id_eleve' });
 db.sequelize.sync({ alter: true }); //Quand la BD est stable il faut commenter cette ligne
 
 
-module.exports = sequelize;
+module.exports = db;

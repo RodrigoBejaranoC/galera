@@ -53,7 +53,7 @@ mongoose
   .then(() => {
     console.log("MONGODB CONX OK");
     //Connexion MAriaDB
-    DB.Sequelize.authenticate()
+    DB.sequelize.authenticate()
       .then(() => console.log('Maria DB CNX OK'))
       .then(() => {
         app.listen(process.env.DB_PORT, () => {
@@ -65,10 +65,5 @@ mongoose
   })
   .catch(e => console.log("Database error - MongoDB", e))
 
-
-
-/*app.listen(process.env.SERVER_PORT, () => {
-  console.log(`This server is running on port ${process.env.SERVER_PORT}. Have fun !`)
-})*/
 
 
